@@ -17,12 +17,18 @@ buttons.forEach(button => {
             display.value = "";
 
         } 
+
+        else if (value === "⌫") {
+            display.value = display.value.slice(0, -1);
+        }
+        
         else if (value === "=") {
             let expression = display.value;
 
             expression = expression.replaceAll("x","*");
             expression = expression.replaceAll("÷", "/");
             expression = expression.replaceAll("−", "-");
+            
             display.value = eval(display.value);
 
         } 
